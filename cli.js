@@ -14,7 +14,7 @@ program
     .command('clear')
     .description('clear all tasks')
     .action(() => {
-        console.log('this clear command')
+        api.clear()
     })
 
 program.parse(process.argv);

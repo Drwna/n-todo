@@ -34,3 +34,7 @@ module.exports.create = async (title) => {
     //     }
     // })
 }
+
+module.exports.clear = async (title) => {
+    await db.write([])
+}

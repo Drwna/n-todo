@@ -35,6 +35,16 @@ module.exports.create = async (title) => {
     // })
 }
 
-module.exports.clear = async (title) => {
+module.exports.clear = async () => {
     await db.write([])
+}
+
+module.exports.showAll = async () => {
+    console.log('show all')
+    // 读取之前的任务
+    const list = await db.read()
+    // 打印之前的任务
+    list.forEach((task, index) => {
+        console.log(`${task.done ? '[⨉]' : '[_]'} ${index} - ${task.title}`)
+    })
 }

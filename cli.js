@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const program = require("commander")
 const api = require("./index.js")
 
@@ -10,6 +12,7 @@ program
         const words = args.slice(0, -1).join(' ')
         api.create(words).then(() => {
             console.log('添加成功')
+            void api.showAll()
         }, () => {
             console.log('添加失败')
         })
